@@ -1,15 +1,10 @@
-¡Por supuesto! Aquí tienes un archivo `README.md` para tu proyecto de FastAPI:
-
-### README.md
-
-```markdown
-# Gestión de Correos Electrónicos
+# API para gestión de correos electrónicos
 
 Este proyecto es una API para la gestión de envíos de correos electrónicos y autenticación de usuarios utilizando JWT, construida con FastAPI.
 
 ## Requisitos
 
-- Python 3.7+
+- Python 3.10+
 - FastAPI
 - Uvicorn
 - SQLModel
@@ -22,8 +17,8 @@ Este proyecto es una API para la gestión de envíos de correos electrónicos y 
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/GDelpo/python_sender_mail.git
+cd python_sender_mail
 ```
 
 2. Crea y activa un entorno virtual:
