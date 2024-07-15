@@ -5,12 +5,8 @@ Este proyecto es una API para la gestión de envíos de correos electrónicos y 
 ## Requisitos
 
 - Python 3.10+
-- FastAPI
-- Uvicorn
-- SQLModel
-- Passlib
-- PyJWT
-- bcrypt
+- Servidor SMTP (por ejemplo, Gmail)
+
 
 ## Instalación
 
