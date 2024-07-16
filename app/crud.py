@@ -6,7 +6,7 @@ from .utils import get_password_hash
 from .models.email import EmailModel, EmailStatus
 from .models.user import UserModel, UserSchemaRequest
 
-# CRUD operations for UserModel
+# CRUD operations for UserModel - Service authentication
 def get_user_by_id(session: Session, user_id: uuid.UUID):
     return session.get(UserModel, user_id)
 
@@ -47,10 +47,10 @@ def update_email_status(session: Session, email_id: int, status: EmailStatus):
 def get_email_by_id(session: Session, email_id: int):
     return session.get(EmailModel, email_id)
 
-def get_sent_emails(session: Session):
-    statement = select(EmailModel).where(EmailModel.status == EmailStatus.SENT.value)
+def get_all_emails(session: Session):
+    statement = select(EmailModel)
     return session.exec(statement).all()
 
-def get_pending_emails(session: Session):
-    statement = select(EmailModel).where(EmailModel.status == EmailStatus.PENDING.value)
+def get_emails_by_status(session: Session, status: EmailStatus):
+    statement = select(EmailModel).where(EmailModel.status == status.value)
     return session.exec(statement).all()

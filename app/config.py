@@ -1,8 +1,9 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
 # Load the environment variables
+load_dotenv()
+
 # EMAIL SMTP CONFIGURATION
 HOST = os.environ.get("MAIL_HOST")
 USERNAME = os.environ.get("MAIL_USERNAME")

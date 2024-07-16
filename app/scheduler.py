@@ -1,5 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from .crud import get_pending_emails, update_email_status
+from .crud import get_emails_by_status, update_email_status
 from .mailer import send_mail
 from .db_manager import get_session
 from .models.email import EmailStatus
@@ -9,7 +9,7 @@ scheduler = BackgroundScheduler()
 def send_pending_emails():
     session = next(get_session())
     try:
-        emails = get_pending_emails(session)
+        emails = get_emails_by_status(session, EmailStatus.PENDING)
         for email in emails:
             data = email.model_dump()
             success = send_mail(data)
