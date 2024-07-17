@@ -39,7 +39,7 @@ async def lifespan(app: FastAPI):
     # Limpieza después de que la aplicación deje de recibir solicitudes
     #shutdown_scheduler()
 
-app = FastAPI(root_path="/api/v1", lifespan=lifespan, 
+app = FastAPI( lifespan=lifespan, 
     title="Gestión de Correos Electrónicos",
     description=description,
     version="1.0.0",
@@ -49,7 +49,7 @@ app = FastAPI(root_path="/api/v1", lifespan=lifespan,
     },
     openapi_tags=tags_metadata
 )
-
+#root_path="/api/v1",
 app.include_router(email.router)
 app.include_router(users.router)
 

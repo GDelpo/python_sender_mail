@@ -1,5 +1,4 @@
-# models/user.py
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional, Union
 from pydantic import BaseModel
 from sqlmodel import SQLModel, Field
@@ -11,11 +10,12 @@ class UserModel(SQLModel, table=True):
     hashed_password: str
     is_active: bool = True
     created_at: datetime = Field(default_factory=datetime.now)
-    updated_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = Field(default=None)
 
 class UserSchemaRequest(SQLModel):
-    service_name: str = Field(..., description="Name of the service")
-    password: str = Field(..., description="Password")
+    service_name: str = Field(..., description="Name of the service", min_length=3, max_length=50)
+    password: str = Field(..., description="Password", min_length=8)
+
 
 class UserSchemaResponse(SQLModel):
     id: uuid.UUID

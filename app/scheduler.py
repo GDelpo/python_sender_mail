@@ -1,34 +1,45 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from .crud import get_emails_by_status, update_email_status
+from .crud import get_emails_by_status_and_service, update_email_status
 from .mailer import send_mail
 from .db_manager import get_session
 from .models.email import EmailStatus
+from app.logger import logger
+import os
 
 scheduler = BackgroundScheduler()
 
 def send_pending_emails():
     session = next(get_session())
     try:
-        emails = get_emails_by_status(session, EmailStatus.PENDING)
+        emails = get_emails_by_status_and_service(session, EmailStatus.PENDING)
         for email in emails:
             data = email.model_dump()
-            success = send_mail(data)
-            status = EmailStatus.SENT if success else EmailStatus.FAILED
-            update_email_status(session, email.id, status)
+            try:
+                success = send_mail(data)
+                status = EmailStatus.SENT if success else EmailStatus.FAILED
+                update_email_status(session, email.id, status)
+            except Exception as e:
+                logger.error(f"Error processing email ID {email.id}: {e}")
+                update_email_status(session, email.id, EmailStatus.FAILED)
+        session.commit()
+    except Exception as e:
+        logger.error(f"Error in send_pending_emails: {e}")
+        session.rollback()
     finally:
         session.close()
 
 def start_scheduler():
     if not scheduler.running:
-        scheduler.add_job(send_pending_emails, 'interval', minutes=1)
+        interval_minutes = int(os.environ.get("SCHEDULER_INTERVAL_MINUTES", 1))
+        scheduler.add_job(send_pending_emails, 'interval', minutes=interval_minutes)
         scheduler.start()
-        print("Scheduler started")
+        logger.info("Scheduler started")
     else:
-        print("Scheduler is already running")
+        logger.info("Scheduler is already running")
 
 def shutdown_scheduler():
     if scheduler.running:
         scheduler.shutdown(wait=False)
-        print("Scheduler stopped")
+        logger.info("Scheduler stopped")
     else:
-        print("Scheduler is not running")
+        logger.info("Scheduler is not running")

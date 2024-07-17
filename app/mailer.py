@@ -1,10 +1,10 @@
-from app.logger import logger
+from .logger import logger
 from .models.email import EmailModel
 from ssl import create_default_context
 from email.mime.text import MIMEText
-from smtplib import SMTP
+from smtplib import SMTP,SMTPException
 
-from .config import HOST, PORT, USERNAME, PASSWORD
+from .config import HOST, PORT
 
 def send_mail(data: dict | None = None):
     msg = EmailModel(**data)
@@ -13,17 +13,23 @@ def send_mail(data: dict | None = None):
     message["To"] = msg.to_email
     message["Cc"] = msg.to_cc_email
     message["Bcc"] = msg.to_cco_email
-    message["Subject"] = msg.subject.strip()
+    message["Subject"] = msg.subject
 
-    #ctx = create_default_context()
+    context = create_default_context()
 
     try:
         with SMTP(HOST, PORT) as server:
-            # server.starttls(context=ctx)
-            # server.login(USERNAME, PASSWORD)
             server.send_message(message)
             server.quit()
         return True
-    except Exception as e:
-        logger.error(f"Error sending email: {e}")
+    except SMTPException as e:
+        logger.error(f"SMTP error while sending email: {e}")
         return False
+    except Exception as e:
+        logger.error(f"General error while sending email: {e}")
+        return False
+
+
+# VER COMO HACCER CON SMTP_SSL
+# with SMTP_SSL(HOST, PORT, context=context) as server:
+#             server.login(USERNAME, PASSWORD)

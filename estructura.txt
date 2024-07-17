@@ -1,0 +1,32 @@
+|   .env
+|   .env-example
+|   .gitignore
+|   app.log
+|   database.db
+|   estructura.txt
+|   README.md
+|   requirements.txt
+|   run.py
+|   
++---app
+|   |   app.py
+|   |   config.py
+|   |   crud.py
+|   |   db_manager.py
+|   |   logger.py
+|   |   mailer.py
+|   |   scheduler.py
+|   |   security.py
+|   |   utils.py
+|   |   __init__.py
+|   |   
+|   +---models
+|   |   |   email.py
+|   |   |   user.py
+|   |   |   __init__.py       
+|   |           
+|   +---routers
+            email.py
+            users.py
+            __init__.py
+

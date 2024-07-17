@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Union
 
 import jwt
@@ -14,26 +14,25 @@ from .utils import verify_password
 
 from .config import ACCESS_TOKEN_EXPIRE_MINUTES, SECRET_KEY, ALGORITHM
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/token")
 
-# Funciones de autenticación y creación de tokens
-def authenticate_user(session: Session, service_name: str, password: str):
+def authenticate_user(session: Session, service_name: str, password: str) -> Union[UserModel, bool]:
     user = get_user_by_service_name(session, service_name)
     if not user or not verify_password(password, user.hashed_password):
         return False
     return user
 
-def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None):
+def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None) -> str:
     to_encode = data.copy()
     if expires_delta:
-        expire = datetime.utcnow() + expires_delta
+        expire = datetime.now(timezone.utc) + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+        expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-async def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Depends(get_session)):
+async def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Depends(get_session)) -> UserModel:
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -53,12 +52,13 @@ async def get_current_user(token: str = Depends(oauth2_scheme), session: Session
         )
     except InvalidTokenError:
         raise credentials_exception
+
     user = get_user_by_service_name(session, service_name=token_data.service_name)
     if user is None:
         raise credentials_exception
     return user
 
-async def get_current_active_user(current_user: UserModel = Depends(get_current_user)):
+async def get_current_active_user(current_user: UserModel = Depends(get_current_user)) -> UserModel:
     if not current_user.is_active:
-        raise HTTPException(status_code=400, detail="Inactive user")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Inactive user")
     return current_user

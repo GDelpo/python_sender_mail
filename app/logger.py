@@ -1,29 +1,28 @@
 import logging
 import sys
 from logtail import LogtailHandler
+from .config import TOKEN_LOGGER, ENV
 
-from app.config import TOKEN_LOGGER
-
-# get token from config
-token = TOKEN_LOGGER
-
-# get logger
+# Get logger
 logger = logging.getLogger()
 
-# create formatter
+# Create formatter
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-# create handlers
+# Create handlers
 stream_handler = logging.StreamHandler(sys.stdout)
 file_handler = logging.FileHandler('app.log')
-better_stack_handler = LogtailHandler(source_token=token)
+#logtail_handler = LogtailHandler(source_token=TOKEN_LOGGER)
 
-# set formatters
+# Set formatters
 stream_handler.setFormatter(formatter)
 file_handler.setFormatter(formatter)
+#logtail_handler.setFormatter(formatter)
 
-# add handlers to logger
-logger.handlers = [stream_handler, file_handler, better_stack_handler]
+# Add handlers to logger
+logger.addHandler(stream_handler)
+logger.addHandler(file_handler)
+#logger.addHandler(logtail_handler)
 
-# set log level
-logger.setLevel(logging.INFO)
+# Set log level
+logger.setLevel(logging.DEBUG if ENV == "development" else logging.INFO)

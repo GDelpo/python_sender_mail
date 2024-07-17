@@ -1086,3 +1086,327 @@ Traceback (most recent call last):
     version = _bcrypt.__about__.__version__
               ^^^^^^^^^^^^^^^^^
 AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-15 21:28:34,553 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-16 01:35:00,897 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-16 18:08:51,864 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 10:34:58,391 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 11:29:38,419 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 14:14:32,793 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 14:14:46,946 - root - ERROR - General error while sending email: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)
+2024-07-17 14:15:54,946 - root - ERROR - General error while sending email: SMTP.__init__() got an unexpected keyword argument 'context'
+2024-07-17 14:24:04,793 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 14:46:19,267 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 14:46:20,269 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): in.logs.betterstack.com:443
+2024-07-17 14:46:21,605 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:22,960 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:24,233 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:25,501 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:26,777 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:28,127 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:29,387 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:30,653 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:31,909 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:33,179 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:34,445 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 14:46:35,705 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:06,354 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 15:40:07,358 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): in.logs.betterstack.com:443
+2024-07-17 15:40:08,565 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:09,930 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:11,187 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:12,539 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:13,882 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:15,236 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:16,610 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:17,860 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:19,128 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:20,406 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:21,665 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:22,928 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:24,274 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:25,635 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:26,981 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:28,241 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:29,609 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:30,878 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:32,250 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:33,507 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:34,873 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:36,229 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:37,517 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:38,789 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:40,058 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:41,414 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:42,753 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:44,011 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:45,360 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:46,651 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:47,929 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:49,285 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:50,652 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:52,002 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:53,370 - urllib3.connectionpool - DEBUG - https://in.logs.betterstack.com:443 "POST / HTTP/11" 202 0
+2024-07-17 15:40:53,888 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 15:40:53,905 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-07-17 15:40:53,905 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-07-17 15:40:54,122 - root - INFO - User created successfully: Test
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_name with data[0:10]
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_data with data[11:19]
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_name with data[20:28]
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_data with data[29:33]
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_name with data[34:42]
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_data with data[43:52]
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:41:10,598 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:41:10,802 - root - INFO - Token generated for service name: Test
+2024-07-17 15:41:47,277 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:41:47,278 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2024-07-17 15:41:47,278 - multipart.multipart - DEBUG - Calling on_header_value with data[63:88]
+2024-07-17 15:41:47,278 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:41:47,279 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:41:47,279 - multipart.multipart - DEBUG - Calling on_part_data with data[92:93]
+2024-07-17 15:41:47,279 - multipart.multipart - DEBUG - Calling on_part_data with data[0:2]
+2024-07-17 15:41:47,280 - multipart.multipart - DEBUG - Calling on_part_data with data[95:264]
+2024-07-17 15:41:47,280 - multipart.multipart - DEBUG - Calling on_part_data with data[0:2]
+2024-07-17 15:41:47,280 - multipart.multipart - DEBUG - Calling on_part_data with data[266:267]
+2024-07-17 15:41:47,281 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:41:47,281 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:41:47,281 - multipart.multipart - DEBUG - Calling on_header_field with data[311:330]
+2024-07-17 15:41:47,282 - multipart.multipart - DEBUG - Calling on_header_value with data[332:375]
+2024-07-17 15:41:47,282 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:41:47,282 - multipart.multipart - DEBUG - Calling on_header_field with data[377:389]
+2024-07-17 15:41:47,282 - multipart.multipart - DEBUG - Calling on_header_value with data[391:401]
+2024-07-17 15:41:47,283 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:41:47,283 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:41:47,283 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:41:47,284 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:51:34,299 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 15:51:41,489 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:51:41,489 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2024-07-17 15:51:41,489 - multipart.multipart - DEBUG - Calling on_header_value with data[63:88]
+2024-07-17 15:51:41,490 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:51:41,490 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:51:41,490 - multipart.multipart - DEBUG - Calling on_part_data with data[92:264]
+2024-07-17 15:51:41,490 - multipart.multipart - DEBUG - Calling on_part_data with data[0:2]
+2024-07-17 15:51:41,491 - multipart.multipart - DEBUG - Calling on_part_data with data[266:267]
+2024-07-17 15:51:41,491 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:51:41,491 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:51:41,491 - multipart.multipart - DEBUG - Calling on_header_field with data[311:330]
+2024-07-17 15:51:41,492 - multipart.multipart - DEBUG - Calling on_header_value with data[332:375]
+2024-07-17 15:51:41,492 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:51:41,492 - multipart.multipart - DEBUG - Calling on_header_field with data[377:389]
+2024-07-17 15:51:41,492 - multipart.multipart - DEBUG - Calling on_header_value with data[391:401]
+2024-07-17 15:51:41,492 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:51:41,492 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:51:41,493 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:51:41,493 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:51:54,531 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:51:54,531 - multipart.multipart - DEBUG - Calling on_field_name with data[0:10]
+2024-07-17 15:51:54,531 - multipart.multipart - DEBUG - Calling on_field_data with data[11:19]
+2024-07-17 15:51:54,532 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:51:54,532 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:51:54,532 - multipart.multipart - DEBUG - Calling on_field_name with data[20:28]
+2024-07-17 15:51:54,532 - multipart.multipart - DEBUG - Calling on_field_data with data[29:33]
+2024-07-17 15:51:54,532 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:51:54,533 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:51:54,533 - multipart.multipart - DEBUG - Calling on_field_name with data[34:42]
+2024-07-17 15:51:54,533 - multipart.multipart - DEBUG - Calling on_field_data with data[43:52]
+2024-07-17 15:51:54,533 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:51:54,533 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:51:54,537 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 15:51:54,539 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-07-17 15:51:54,539 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-07-17 15:51:54,749 - root - INFO - Token generated for service name: Test
+2024-07-17 15:53:20,554 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:53:20,554 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2024-07-17 15:53:20,555 - multipart.multipart - DEBUG - Calling on_header_value with data[63:88]
+2024-07-17 15:53:20,555 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:53:20,555 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:53:20,556 - multipart.multipart - DEBUG - Calling on_part_data with data[92:264]
+2024-07-17 15:53:20,556 - multipart.multipart - DEBUG - Calling on_part_data with data[0:2]
+2024-07-17 15:53:20,556 - multipart.multipart - DEBUG - Calling on_part_data with data[266:267]
+2024-07-17 15:53:20,557 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:53:20,557 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:53:20,557 - multipart.multipart - DEBUG - Calling on_header_field with data[311:330]
+2024-07-17 15:53:20,557 - multipart.multipart - DEBUG - Calling on_header_value with data[332:354]
+2024-07-17 15:53:20,558 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:53:20,558 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:53:20,558 - multipart.multipart - DEBUG - Calling on_part_data with data[358:401]
+2024-07-17 15:53:20,558 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:53:20,558 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_header_value with data[63:88]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_data with data[92:264]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_data with data[0:2]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_data with data[266:267]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_header_field with data[311:330]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_header_value with data[332:354]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_data with data[358:393]
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:53:32,910 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:57:12,456 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 15:57:25,319 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 15:57:42,025 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:57:42,041 - multipart.multipart - DEBUG - Calling on_field_name with data[0:10]
+2024-07-17 15:57:42,041 - multipart.multipart - DEBUG - Calling on_field_data with data[11:19]
+2024-07-17 15:57:42,041 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:57:42,041 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:57:42,042 - multipart.multipart - DEBUG - Calling on_field_name with data[20:28]
+2024-07-17 15:57:42,042 - multipart.multipart - DEBUG - Calling on_field_data with data[29:33]
+2024-07-17 15:57:42,042 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:57:42,042 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:57:42,043 - multipart.multipart - DEBUG - Calling on_field_name with data[34:42]
+2024-07-17 15:57:42,043 - multipart.multipart - DEBUG - Calling on_field_data with data[43:52]
+2024-07-17 15:57:42,043 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:57:42,043 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:57:42,057 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 15:57:42,059 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-07-17 15:57:42,060 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-07-17 15:57:42,274 - root - INFO - Token generated for service name: Test
+2024-07-17 15:58:26,525 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 15:58:38,847 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:58:38,847 - multipart.multipart - DEBUG - Calling on_field_name with data[0:10]
+2024-07-17 15:58:38,847 - multipart.multipart - DEBUG - Calling on_field_data with data[11:19]
+2024-07-17 15:58:38,847 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:58:38,848 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:58:38,848 - multipart.multipart - DEBUG - Calling on_field_name with data[20:28]
+2024-07-17 15:58:38,848 - multipart.multipart - DEBUG - Calling on_field_data with data[29:33]
+2024-07-17 15:58:38,848 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:58:38,848 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 15:58:38,849 - multipart.multipart - DEBUG - Calling on_field_name with data[34:42]
+2024-07-17 15:58:38,849 - multipart.multipart - DEBUG - Calling on_field_data with data[43:52]
+2024-07-17 15:58:38,849 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 15:58:38,849 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 15:58:38,862 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 15:58:38,864 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-07-17 15:58:38,864 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-07-17 15:58:39,076 - root - INFO - Token generated for service name: Test
+2024-07-17 15:58:52,027 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:58:52,027 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2024-07-17 15:58:52,028 - multipart.multipart - DEBUG - Calling on_header_value with data[63:88]
+2024-07-17 15:58:52,028 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:58:52,028 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:58:52,028 - multipart.multipart - DEBUG - Calling on_part_data with data[92:264]
+2024-07-17 15:58:52,029 - multipart.multipart - DEBUG - Calling on_part_data with data[0:2]
+2024-07-17 15:58:52,029 - multipart.multipart - DEBUG - Calling on_part_data with data[266:267]
+2024-07-17 15:58:52,029 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:58:52,029 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 15:58:52,029 - multipart.multipart - DEBUG - Calling on_header_field with data[311:330]
+2024-07-17 15:58:52,030 - multipart.multipart - DEBUG - Calling on_header_value with data[332:375]
+2024-07-17 15:58:52,030 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:58:52,030 - multipart.multipart - DEBUG - Calling on_header_field with data[377:389]
+2024-07-17 15:58:52,030 - multipart.multipart - DEBUG - Calling on_header_value with data[391:401]
+2024-07-17 15:58:52,031 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 15:58:52,031 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 15:58:52,031 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 15:58:52,031 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 16:03:36,101 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 16:03:42,490 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 16:05:13,506 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 16:05:32,020 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 16:05:32,021 - multipart.multipart - DEBUG - Calling on_field_name with data[0:10]
+2024-07-17 16:05:32,021 - multipart.multipart - DEBUG - Calling on_field_data with data[11:19]
+2024-07-17 16:05:32,022 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 16:05:32,022 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 16:05:32,022 - multipart.multipart - DEBUG - Calling on_field_name with data[20:28]
+2024-07-17 16:05:32,022 - multipart.multipart - DEBUG - Calling on_field_data with data[29:33]
+2024-07-17 16:05:32,022 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 16:05:32,023 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-07-17 16:05:32,023 - multipart.multipart - DEBUG - Calling on_field_name with data[34:42]
+2024-07-17 16:05:32,023 - multipart.multipart - DEBUG - Calling on_field_data with data[43:52]
+2024-07-17 16:05:32,023 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-07-17 16:05:32,023 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 16:05:32,039 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gdelponte\Desktop\fastapi-send-email\env\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-07-17 16:05:32,041 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-07-17 16:05:32,041 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-07-17 16:05:32,256 - root - INFO - Token generated for service name: Test
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_header_value with data[63:88]
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_part_data with data[92:264]
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_part_data with data[0:2]
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_part_data with data[266:267]
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_part_begin with no data
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_header_field with data[311:330]
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_header_value with data[332:354]
+2024-07-17 16:05:46,632 - multipart.multipart - DEBUG - Calling on_header_end with no data
+2024-07-17 16:05:46,637 - multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2024-07-17 16:05:46,638 - multipart.multipart - DEBUG - Calling on_part_end with no data
+2024-07-17 16:05:46,638 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-07-17 16:06:29,744 - tzlocal - DEBUG - Looking up time zone info from registry
+2024-07-17 16:06:37,683 - tzlocal - DEBUG - Looking up time zone info from registry

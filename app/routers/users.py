@@ -8,6 +8,7 @@ from ..crud import create_service, get_user_by_service_name
 from ..db_manager import get_session
 from ..models.user import Token, UserSchemaRequest, UserSchemaResponse
 from ..security import authenticate_user, create_access_token
+from ..logger import logger
 
 router = APIRouter(
     prefix='/users',
@@ -18,13 +19,17 @@ router = APIRouter(
 async def create_new_service(user: UserSchemaRequest, session: Session = Depends(get_session)):
     db_user = get_user_by_service_name(session, user.service_name)
     if db_user:
+        logger.warning(f"Attempt to create a user with an existing service name: {user.service_name}")
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Service name already registered")
-    return create_service(session, user)
+    created_user = create_service(session, user)
+    logger.info(f"User created successfully: {created_user.service_name}")
+    return created_user
 
 @router.post("/token", response_model=Token, status_code=status.HTTP_200_OK, response_description="Access token generated successfully")
 async def generate_token_for_service(form_data: OAuth2PasswordRequestForm = Depends(), session: Session = Depends(get_session)):
     user = authenticate_user(session, form_data.username, form_data.password)
     if not user:
+        logger.warning(f"Failed authentication attempt for service name: {form_data.username}")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect service name or password",
@@ -34,5 +39,5 @@ async def generate_token_for_service(form_data: OAuth2PasswordRequestForm = Depe
     access_token = create_access_token(
         data={"sub": user.service_name}, expires_delta=access_token_expires
     )
+    logger.info(f"Token generated for service name: {user.service_name}")
     return {"access_token": access_token, "token_type": "bearer"}
-
