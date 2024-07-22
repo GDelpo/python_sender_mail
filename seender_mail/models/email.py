@@ -18,7 +18,7 @@ class EmailModel(SQLModel, table=True):
     to_cco_email: Optional[str] = None
     subject: str
     attachment: Optional[str] = None
-    body: str
+    html_body: str
     status: EmailStatus
     created_at: datetime = Field(default_factory=datetime.now)
     sent_at: Optional[datetime] = None
@@ -28,10 +28,10 @@ class EmailModel(SQLModel, table=True):
 class EmailSchemaRequest(SQLModel):
     from_email: EmailStr = Field(..., description="Email address of the sender")
     to_email: List[EmailStr] = Field(..., description="Email address of the recipient")
-    to_cc_email: Optional[List[EmailStr]] = Field(None, description="Email address to be included in the CC field")
-    to_cco_email: Optional[List[EmailStr]] = Field(None, description="Email address to be included in the BCC field")
+    to_cc_email: Optional[List[EmailStr]] = Field(None, nullable=True, description="Email address to be included in the CC field")
+    to_cco_email: Optional[List[EmailStr]] = Field(None, nullable=True, description="Email address to be included in the BCC field")
     subject: str = Field(..., description="Subject of the email", min_length=1, max_length=50)
-    body: str = Field(..., description="HTML content of the email", min_length=3)
+    html_body: str = Field(..., description="HTML content of the email", min_length=3)
 
 class EmailSchemaResponse(SQLModel):
     id: int
@@ -41,7 +41,7 @@ class EmailSchemaResponse(SQLModel):
     to_cco_email: Optional[str] = None
     subject: str
     attachment: Optional[str] = None
-    body: str
+    html_body: str
     status: EmailStatus
     created_at: datetime
     sent_at: Optional[datetime] = None

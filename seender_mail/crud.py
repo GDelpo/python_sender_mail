@@ -1,12 +1,14 @@
 from datetime import datetime, timezone
 import uuid
 from sqlmodel import Session, select
+
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.exc import SQLAlchemyError
 
 from .utils import get_password_hash
 from .models.email import EmailModel, EmailStatus
 from .models.user import UserModel, UserSchemaRequest
-from app.logger import logger
+from seender_mail.logger import logger
 
 # CRUD operations for UserModel - Service authentication
 def get_user_by_id(session: Session, user_id: uuid.UUID):
@@ -53,7 +55,7 @@ def create_email(session: Session, email_data: EmailModel):
         logger.error(f"Error creating email: {e}")
         session.rollback()
         return None
-
+    
 def update_email_status(session: Session, email_id: int, user_id: uuid.UUID, status: EmailStatus):
     email = get_email_by_id(session, email_id, user_id)
     if email:

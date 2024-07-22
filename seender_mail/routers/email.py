@@ -1,35 +1,22 @@
-import os
+import json
 from typing import Annotated, Optional
 import uuid
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, status, File, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Depends, Form, HTTPException, Query, status, File, UploadFile
 from sqlmodel import Session
-from app.logger import logger
+from seender_mail.logger import logger
 
-from ..utils import normalize_email
+from ..utils import normalize_email, save_attachment
 from ..crud import create_email, get_all_emails_by_service, get_email_by_id, get_emails_by_status_and_service, update_email_status
 from ..db_manager import get_session
 from ..mailer import send_mail
 from ..models.user import UserModel
 from ..models.email import EmailModel, EmailSchemaRequest, EmailSchemaResponse, EmailStatus
 from ..security import get_current_active_user
-from ..config import PUBLIC_FOLDER
 
 router = APIRouter(
     prefix='/emails',
     tags=["emails"],
 )
-
-ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg'}
-MAX_FILE_SIZE = 2 * 1024 * 1024  # 2 MB
-
-def validate_file(file: UploadFile):
-    extension = file.filename.split(".")[-1].lower()
-    if extension not in ALLOWED_EXTENSIONS:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="File type not allowed")
-    if len(file.file.read()) > MAX_FILE_SIZE:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="File too large")
-    file.file.seek(0)
-
 def send_email_task(email_id: int, user_id: uuid.UUID):
     session = next(get_session())
     try:
@@ -44,40 +31,44 @@ def send_email_task(email_id: int, user_id: uuid.UUID):
         session.close()
 
 @router.post("/", status_code=status.HTTP_202_ACCEPTED, response_description="Email scheduled for sending")
-def schedule_mail(
-    request: EmailSchemaRequest, 
+async def schedule_mail(
     background_tasks: BackgroundTasks,
-    #file: UploadFile = File(None), 
+    payload: str = Form(..., description="JSON payload containing the email details"),
+    file: UploadFile = File(None, description="Optional file to be attached"),
     session: Session = Depends(get_session), 
     current_user: UserModel = Depends(get_current_active_user)
 ):
-    email = EmailModel(
-        from_email=normalize_email(request.from_email),
-        to_email=normalize_email(request.to_email),
-        to_cc_email=normalize_email(request.to_cc_email),
-        to_cco_email=normalize_email(request.to_cco_email),
-        subject=request.subject.strip(),
-        body=request.body,
-        status=EmailStatus.PENDING,
-        owner_id=current_user.id
-    )
+    try:
+        # Check if the payload is a valid JSON
+        email_request = EmailSchemaRequest.model_validate_json(payload)
+        # Create the email object with the data from the request validated
+        email = EmailModel(
+            from_email=normalize_email(email_request.from_email),
+            to_email=normalize_email(email_request.to_email),
+            to_cc_email=normalize_email(email_request.to_cc_email),
+            to_cco_email=normalize_email(email_request.to_cco_email),
+            subject=email_request.subject.strip(),
+            html_body=email_request.html_body,
+            status=EmailStatus.PENDING,
+            owner_id=current_user.id
+        )
+        # Save the attachment if it exists
+        if file:
+            file_path = await save_attachment(file, current_user)
+            if file_path is None:
+                raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Failed to save attachment")
+            email.attachment = file_path
 
-    # if file:
-    #     validate_file(file)
-    #     try:
-    #         service_dir = os.path.join(PUBLIC_FOLDER, current_user.service_name)
-    #         os.makedirs(service_dir, exist_ok=True)
-    #         file_path = os.path.join(service_dir, file.filename)
-    #         with open(file_path, "wb") as f:
-    #             f.write(file.file.read())
-    #         email.attachment = file_path
-    #     except Exception as e:
-    #         logger.error(f"Error saving attachment: {e}")
-    #         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Failed to save attachment")
-
-    email = create_email(session, email)
-    background_tasks.add_task(send_email_task, email.id, email.owner_id)
-    return {"id": email.id, "message": "Email scheduled for sending"}
+        # Create the email in the database
+        email = create_email(session, email)
+        # Schedule the email for sending
+        background_tasks.add_task(send_email_task, email.id, email.owner_id)
+        # Return the response with the email id and a message
+        return {"id": email.id, "message": "Email scheduled for sending"}
+    except json.JSONDecodeError:
+        return {"error": "Invalid JSON format", "status_code": status.HTTP_400_BAD_REQUEST}
+    except ValueError as e:
+        return {"error": str(e), "status_code": status.HTTP_400_BAD_REQUEST}
 
 @router.get("/", response_model=list[EmailSchemaResponse])
 def list_emails(

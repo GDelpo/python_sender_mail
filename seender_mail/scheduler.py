@@ -3,7 +3,7 @@ from .crud import get_emails_by_status_and_service, update_email_status
 from .mailer import send_mail
 from .db_manager import get_session
 from .models.email import EmailStatus
-from app.logger import logger
+from seender_mail.logger import logger
 import os
 
 scheduler = BackgroundScheduler()
